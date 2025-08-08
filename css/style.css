@@ -1,0 +1,84 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dedede;
+  padding: 5px;
+  margin: 15px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.95em;
+}
+
+p {
+  max-width: 60ch;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  background-color: #fff;
+  border: 3px solid #333;
+  padding: 5px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  figure {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .grid figure:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  figure {
+    border-radius: 0;
+  }
+  .grid figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #f5f5dc;
+  }
+  figure {
+    background-color: #333;
+    color: #ffeb99;
+    border-color: #000;
+  }
+}
